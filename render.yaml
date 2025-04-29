@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: coinyway-scraper
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    branch: main
+    healthCheckPath: /
+    routes:
+      - type: http
+        sourcePort: 10000
+        targetPort: 10000
